@@ -9,7 +9,7 @@ export default defineConfig({
 	site: 'https://docs.oscruser.group',
 	integrations: [
 		starlight({
-			title: 'Cart Reader Docs',
+			title: 'OSCR User Group Docs',
 			social: [{ icon: 'github', label: 'GitHub', href: repo }],
 			editLink: { baseUrl: `${repo}/edit/main/` },
 			lastUpdated: true,

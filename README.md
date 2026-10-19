@@ -1,4 +1,4 @@
-# Cart Reader Docs
+# OSCR User Group Docs
 
 Documentation site built with [Astro Starlight](https://starlight.astro.build). Content is Markdown in
 `src/content/docs/`, editable in the browser through [Sveltia CMS](https://sveltiacms.app) at `/admin/`.

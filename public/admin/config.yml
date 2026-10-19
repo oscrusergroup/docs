@@ -1,0 +1,166 @@
+# Sveltia CMS configuration: https://sveltiacms.app/en/docs
+# Editors sign in at /admin/ with GitHub. With editorial_workflow, every save opens a pull request
+# that a maintainer reviews (with a Cloudflare preview) and merges.
+
+backend:
+  name: github
+  repo: OWNER/cartreader-docs # TODO: real owner/repo
+  branch: main
+  base_url: https://sveltia-cms-auth.OWNER.workers.dev # TODO: URL of the sveltia-cms-auth Worker
+
+publish_mode: editorial_workflow
+
+site_url: https://cartreader-docs.pages.dev # TODO: production URL
+display_url: https://cartreader-docs.pages.dev
+
+# Images are stored in src/assets/docs so Astro can optimize them. The global setting is for the
+# shared asset library; each collection overrides public_folder with a relative path because pages
+# live three folders deep (src/content/docs/<section>/page.md) and Astro resolves images relative to the page.
+media_folder: src/assets/docs
+public_folder: /src/assets/docs
+
+collections:
+  - name: getting-started
+    label: Getting started
+    label_singular: Page
+    icon: rocket_launch
+    folder: src/content/docs/getting-started
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    media_folder: /src/assets/docs
+    public_folder: ../../../assets/docs
+    sortable_fields: [title, sidebar.order]
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Short description, widget: string, required: false, hint: Shown in search results and link previews. }
+      - name: sidebar
+        label: Sidebar
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { name: order, label: Position in sidebar, widget: number, value_type: int, required: false, hint: Lower numbers appear first. }
+      - { name: body, label: Content, widget: markdown }
+  - name: hardware
+    label: Hardware
+    label_singular: Page
+    icon: memory
+    folder: src/content/docs/hardware
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    media_folder: /src/assets/docs
+    public_folder: ../../../assets/docs
+    sortable_fields: [title, sidebar.order]
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Short description, widget: string, required: false, hint: Shown in search results and link previews. }
+      - name: sidebar
+        label: Sidebar
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { name: order, label: Position in sidebar, widget: number, value_type: int, required: false, hint: Lower numbers appear first. }
+      - { name: body, label: Content, widget: markdown }
+  - name: systems
+    label: Systems
+    label_singular: Page
+    icon: sports_esports
+    folder: src/content/docs/systems
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    media_folder: /src/assets/docs
+    public_folder: ../../../assets/docs
+    sortable_fields: [title, sidebar.order]
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Short description, widget: string, required: false, hint: Shown in search results and link previews. }
+      - name: sidebar
+        label: Sidebar
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { name: order, label: Position in sidebar, widget: number, value_type: int, required: false, hint: Lower numbers appear first. }
+      - { name: body, label: Content, widget: markdown }
+  - name: firmware
+    label: Firmware
+    label_singular: Page
+    icon: system_update
+    folder: src/content/docs/firmware
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    media_folder: /src/assets/docs
+    public_folder: ../../../assets/docs
+    sortable_fields: [title, sidebar.order]
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Short description, widget: string, required: false, hint: Shown in search results and link previews. }
+      - name: sidebar
+        label: Sidebar
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { name: order, label: Position in sidebar, widget: number, value_type: int, required: false, hint: Lower numbers appear first. }
+      - { name: body, label: Content, widget: markdown }
+  - name: troubleshooting
+    label: Troubleshooting
+    label_singular: Page
+    icon: build
+    folder: src/content/docs/troubleshooting
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    media_folder: /src/assets/docs
+    public_folder: ../../../assets/docs
+    sortable_fields: [title, sidebar.order]
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Short description, widget: string, required: false, hint: Shown in search results and link previews. }
+      - name: sidebar
+        label: Sidebar
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { name: order, label: Position in sidebar, widget: number, value_type: int, required: false, hint: Lower numbers appear first. }
+      - { name: body, label: Content, widget: markdown }
+  - name: contributing
+    label: Contributing
+    label_singular: Page
+    icon: edit_note
+    folder: src/content/docs/contributing
+    extension: md
+    format: frontmatter
+    create: true
+    slug: '{{slug}}'
+    media_folder: /src/assets/docs
+    public_folder: ../../../assets/docs
+    sortable_fields: [title, sidebar.order]
+    summary: '{{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: description, label: Short description, widget: string, required: false, hint: Shown in search results and link previews. }
+      - name: sidebar
+        label: Sidebar
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - { name: order, label: Position in sidebar, widget: number, value_type: int, required: false, hint: Lower numbers appear first. }
+      - { name: body, label: Content, widget: markdown }

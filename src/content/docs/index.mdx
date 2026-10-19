@@ -1,0 +1,32 @@
+---
+title: Cart Reader Docs
+description: Guides for building, flashing and using the Cart Reader.
+template: splash
+hero:
+  tagline: Build it, flash it, and dump your cartridges.
+  actions:
+    - text: Get started
+      link: /getting-started/introduction/
+      icon: right-arrow
+    - text: Help edit these docs
+      link: /contributing/editing/
+      icon: pencil
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<Card title="Getting started" icon="rocket">
+		[What you need and where to begin.](/getting-started/introduction/)
+	</Card>
+	<Card title="Hardware" icon="setting">
+		[Assembly and parts.](/hardware/overview/)
+	</Card>
+	<Card title="Systems" icon="list-format">
+		[Per-console guides.](/systems/overview/)
+	</Card>
+	<Card title="Firmware" icon="download">
+		[Installing and updating firmware.](/firmware/updating/)
+	</Card>
+</CardGrid>

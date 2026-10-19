@@ -11,6 +11,7 @@ Documentation site built with [Astro Starlight](https://starlight.astro.build). 
 | `pnpm dev`     | Dev server at `localhost:4321`                |
 | `pnpm build`   | Build to `./dist/` (includes Pagefind search) |
 | `pnpm preview` | Preview the production build                  |
+| `pnpm run deploy` | Build and deploy with Wrangler (manual)    |
 
 ## Layout
 
@@ -34,8 +35,10 @@ Run `pnpm dev`, open <http://localhost:4321/admin/> in Chrome or Edge, and choos
 The site is served at <https://docs.oscruser.group>. Fill in the remaining TODO first: the auth Worker URL (`backend.base_url` in `public/admin/config.yml`).
 
 1. **GitHub repo**: push this project to [oscrusergroup/docs](https://github.com/oscrusergroup/docs), with `main` as the default branch.
-2. **Cloudflare Pages**: connect the repo. Build command `pnpm build`, output `dist`. Add `docs.oscruser.group` as a custom domain. PR preview
-   deployments are on by default, so reviewers get a preview link on every CMS pull request.
+2. **Cloudflare Workers**: connect the repo (Workers Builds). Build command `pnpm build`, deploy
+   command `npx wrangler deploy`. `wrangler.jsonc` serves `dist/` as static assets on the
+   `docs.oscruser.group` custom domain. Turn on preview builds for non-production branches so reviewers
+   get a preview link on every CMS pull request.
 3. **CMS login**: deploy [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) as a
    Cloudflare Worker, create a GitHub OAuth App with callback `https://<worker>/callback`, and set
    `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` and `ALLOWED_DOMAINS` to `docs.oscruser.group` on the Worker.

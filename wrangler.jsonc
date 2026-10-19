@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Static site: no Worker script, just the Astro build output. Having this file also stops
+  // `wrangler deploy` from auto-configuring the project (which adds the SSR Cloudflare adapter).
+  "name": "oscrusergroup-docs",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "docs.oscruser.group", "custom_domain": true }],
+  "observability": { "enabled": true }
+}

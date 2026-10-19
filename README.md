@@ -32,7 +32,7 @@ Run `pnpm dev`, open <http://localhost:4321/admin/> in Chrome or Edge, and choos
 
 ## Deployment setup (one-time)
 
-The site is served at <https://docs.oscruser.group>. Fill in the remaining TODO first: the auth Worker URL (`backend.base_url` in `public/admin/config.yml`).
+The site is served at <https://docs.oscruser.group>; CMS sign-in goes through the auth Worker at <https://sveltia-cms-auth.oscruser.group>.
 
 1. **GitHub repo**: push this project to [oscrusergroup/docs](https://github.com/oscrusergroup/docs), with `main` as the default branch.
 2. **Cloudflare Workers**: connect the repo (Workers Builds). Build command `pnpm build`, deploy
@@ -42,6 +42,6 @@ The site is served at <https://docs.oscruser.group>. Fill in the remaining TODO 
 3. **CMS login**: deploy [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) as a
    Cloudflare Worker, create a GitHub OAuth App with callback `https://<worker>/callback`, and set
    `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` and `ALLOWED_DOMAINS` to `docs.oscruser.group` on the Worker.
-   Put the Worker URL in `backend.base_url`.
+   Its URL is set as `backend.base_url` in `public/admin/config.yml`.
 4. **Editors**: invite them as repo collaborators with write access. With `publish_mode:
    editorial_workflow`, their saves open pull requests instead of committing to `main`.

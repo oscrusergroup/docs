@@ -6,7 +6,7 @@ backend:
   name: github
   repo: oscrusergroup/docs
   branch: main
-  base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev # TODO: URL of the deployed sveltia-cms-auth Worker
+  base_url: https://sveltia-cms-auth.oscruser.group
 
 publish_mode: editorial_workflow
 

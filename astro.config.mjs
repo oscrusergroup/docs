@@ -2,13 +2,11 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-// TODO: replace with the real GitHub repository once it exists (also update public/admin/config.yml).
-const repo = 'https://github.com/OWNER/cartreader-docs';
+const repo = 'https://github.com/oscrusergroup/docs';
 
 // https://astro.build/config
 export default defineConfig({
-	// TODO: production URL (used for the sitemap and canonical links).
-	site: 'https://cartreader-docs.pages.dev',
+	site: 'https://docs.oscruser.group',
 	integrations: [
 		starlight({
 			title: 'Cart Reader Docs',

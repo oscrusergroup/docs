@@ -31,14 +31,14 @@ Run `pnpm dev`, open <http://localhost:4321/admin/> in Chrome or Edge, and choos
 
 ## Deployment setup (one-time)
 
-Replace the `OWNER` placeholders in `astro.config.mjs` and `public/admin/config.yml` first.
+The site is served at <https://docs.oscruser.group>. Fill in the remaining TODO first: the auth Worker URL (`backend.base_url` in `public/admin/config.yml`).
 
-1. **GitHub repo**: push this project, with `main` as the default branch.
-2. **Cloudflare Pages**: connect the repo. Build command `pnpm build`, output `dist`. PR preview
+1. **GitHub repo**: push this project to [oscrusergroup/docs](https://github.com/oscrusergroup/docs), with `main` as the default branch.
+2. **Cloudflare Pages**: connect the repo. Build command `pnpm build`, output `dist`. Add `docs.oscruser.group` as a custom domain. PR preview
    deployments are on by default, so reviewers get a preview link on every CMS pull request.
 3. **CMS login**: deploy [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) as a
    Cloudflare Worker, create a GitHub OAuth App with callback `https://<worker>/callback`, and set
-   `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` and `ALLOWED_DOMAINS` (your docs domain) on the Worker.
+   `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` and `ALLOWED_DOMAINS` to `docs.oscruser.group` on the Worker.
    Put the Worker URL in `backend.base_url`.
 4. **Editors**: invite them as repo collaborators with write access. With `publish_mode:
    editorial_workflow`, their saves open pull requests instead of committing to `main`.

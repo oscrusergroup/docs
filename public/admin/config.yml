@@ -4,14 +4,14 @@
 
 backend:
   name: github
-  repo: OWNER/cartreader-docs # TODO: real owner/repo
+  repo: oscrusergroup/docs
   branch: main
-  base_url: https://sveltia-cms-auth.OWNER.workers.dev # TODO: URL of the sveltia-cms-auth Worker
+  base_url: https://sveltia-cms-auth.YOUR-SUBDOMAIN.workers.dev # TODO: URL of the deployed sveltia-cms-auth Worker
 
 publish_mode: editorial_workflow
 
-site_url: https://cartreader-docs.pages.dev # TODO: production URL
-display_url: https://cartreader-docs.pages.dev
+site_url: https://docs.oscruser.group
+display_url: https://docs.oscruser.group
 
 # Images are stored in src/assets/docs so Astro can optimize them. The global setting is for the
 # shared asset library; each collection overrides public_folder with a relative path because pages
